@@ -4,6 +4,10 @@
         <meta charset="UTF-8">
         <meta name="author" content="Rori Rodler">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+        <link rel="manifest" href="icons/site.webmanifest">
         <title>Rori</title>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:900|Ubuntu" rel="stylesheet">
         <style>
@@ -48,7 +52,6 @@
                 color: #EEEEEE;
             }
             header ul{
-                float: inline-end;
                 display: inline-block;
                 padding-right: 1rem;
             }
@@ -275,7 +278,7 @@
                 #langmenu{padding: 0;}
                 aside{display: none;}
                 article{border-radius: 0px; padding: 0;}
-                article h1{font-size: 2rem;}
+                article h1{font-size: 2rem; padding-top: 1rem;}
                 article ul{padding: 0;}
                 #spaceman{float: unset; width: 250px; margin: 0 auto;}
                 footer{display: block;}
@@ -529,8 +532,8 @@
                 var button = document.querySelectorAll(".button");
                 button[0].addEventListener('click', updateLanguage);
                 button[1].addEventListener('click', updateLanguage);
-                function updateLanguage(button) {
-                    if (button.originalTarget.value === 'HU') {
+                function updateLanguage(choice) {
+                    if (choice.target.value === 'HU') {
                         sessionStorage.removeItem("chosenLang");
                         sessionStorage.setItem("chosenLang", "HU");
                         location.reload();
